@@ -1,3 +1,4 @@
+import 'package:cultulingo/splash/levels.dart';
 import 'package:cultulingo/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: SplashScreen1()),
+      home: Scaffold(body: LevelsPage()),
     );
   }
 }

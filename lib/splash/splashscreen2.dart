@@ -1,10 +1,9 @@
-import 'package:cultulingo/splash/splashscreen2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SplashScreen1 extends StatelessWidget {
-  const SplashScreen1({super.key});
+class SplashScreen2 extends StatelessWidget {
+  const SplashScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class SplashScreen1 extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 1,
               child: SvgPicture.asset(
-                "assets/splash/splash1.svg",
+                "assets/splash/splash2.svg",
                 fit: BoxFit.contain,
               ),
             ),
@@ -42,7 +41,7 @@ class SplashScreen1 extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        'Welcome to Cultulingo',
+                        'Kamu Sudah Mempunyai Akun?',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.jost(
                           color: Colors.black,
@@ -54,7 +53,7 @@ class SplashScreen1 extends StatelessWidget {
                       ),
                       const SizedBox(height: 15),
                       Text(
-                        'Dengan Cultulingo, Anda dapat belajar bahasa baru dengan cara yang menyenangkan dan interaktif, langsung dari ponsel Anda.',
+                        'Mulai Buat akun kamu Sekarang',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.jost(
                           color: Colors.black,
@@ -67,33 +66,50 @@ class SplashScreen1 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF134CD2),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF134CD2),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 30),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                          ),
+                          onPressed: () {
+                            // Add navigation or other actions here
+                          },
+                          child: Text(
+                            "Masuk",
+                            style: GoogleFonts.jost(
+                              fontSize: 14,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SplashScreen2()),
-                        );
-                      },
-                      child: Text(
-                        "Selanjutnya",
-                        style: GoogleFonts.jost(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Saya Belum Mempunyai akun',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color(0xFF134CD2),
+                            fontSize: 14,
+                            fontFamily: 'Jost',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
+                            letterSpacing: 0.28,
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
