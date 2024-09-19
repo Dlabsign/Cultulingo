@@ -1,3 +1,6 @@
+import 'package:cultulingo/auth/login.dart';
+import 'package:cultulingo/auth/signup.dart';
+import 'package:cultulingo/components/primarybtn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,12 +13,12 @@ class SplashScreen2 extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final double screenWidth = screenSize.width;
     final double screenHeight = screenSize.height;
-    final double imageHeight =
-        screenHeight * 0.5; // Set image height to 50% of screen height
+    final double imageHeight = screenHeight * 0.5;
 
     final double paddingHorizontal = screenWidth * 0.08;
 
     return Scaffold(
+      backgroundColor: const Color(0xFFF2F3F4),
       body: Column(
         children: [
           Container(
@@ -57,8 +60,7 @@ class SplashScreen2 extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.jost(
                           color: Colors.black,
-                          fontSize: screenWidth *
-                              0.03, // Adjust font size dynamically
+                          fontSize: screenWidth * 0.03,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.28,
                           height: 1.5,
@@ -72,37 +74,31 @@ class SplashScreen2 extends StatelessWidget {
                     children: [
                       Container(
                         width: double.infinity,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF134CD2),
-                            padding: EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 30),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                          ),
+                        child: PrimaryButton(
+                          buttonText: "Login",
                           onPressed: () {
-                            // Add navigation or other actions here
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginPageDart()),
+                            );
                           },
-                          child: Text(
-                            "Masuk",
-                            style: GoogleFonts.jost(
-                              fontSize: 14,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
-                        child: const Text(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpPage()),
+                          );
+                        },
+                        child: Text(
                           'Saya Belum Mempunyai akun',
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: GoogleFonts.jost(
                             color: Color(0xFF134CD2),
-                            fontSize: 14,
-                            fontFamily: 'Jost',
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                             height: 0,
                             letterSpacing: 0.28,

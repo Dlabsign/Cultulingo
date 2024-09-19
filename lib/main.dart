@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: LevelsPage()),
+      home: Scaffold(body: SplashScreen1()),
     );
   }
 }

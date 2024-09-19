@@ -1,3 +1,4 @@
+import 'package:cultulingo/components/primarybtn.dart';
 import 'package:cultulingo/splash/splashscreen2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,6 +18,7 @@ class SplashScreen1 extends StatelessWidget {
     final double paddingHorizontal = screenWidth * 0.08;
 
     return Scaffold(
+      backgroundColor: const Color(0xFFF2F3F4),
       body: Column(
         children: [
           Container(
@@ -69,15 +71,8 @@ class SplashScreen1 extends StatelessWidget {
                   ),
                   Container(
                     width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF134CD2),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                      ),
+                    child: PrimaryButton(
+                      buttonText: "Selanjutnya",
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -85,14 +80,6 @@ class SplashScreen1 extends StatelessWidget {
                               builder: (context) => const SplashScreen2()),
                         );
                       },
-                      child: Text(
-                        "Selanjutnya",
-                        style: GoogleFonts.jost(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
                     ),
                   ),
                 ],
